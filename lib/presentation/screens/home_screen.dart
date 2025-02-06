@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/presentation/screens/second_screen.dart';
+import 'package:getx/presentation/widgets/change_language.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,26 +47,38 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 33,
                 child: OutlinedButton(
                     onPressed: () {
-                      Get.bottomSheet(backgroundColor: Colors.greenAccent,
-                        Column(
-                        children: [
-                          ListTile(
-                            leading: Icon(Icons.dark_mode),
-                            title: Text("Dark Mode"), onTap: () {
-                              Get.changeTheme(ThemeData.dark());
-                            },
-                          ),
-                          ListTile(
-                            leading: Icon(Icons.light_mode),
-                            title: Text("Light Mode"), onTap: () {
-                              Get.changeTheme(ThemeData.light());
-                            },
-                          ),
-                        ],
-                      ));
+                      Get.bottomSheet(
+                          backgroundColor: Colors.greenAccent,
+                          Column(
+                            children: [
+                              ListTile(
+                                leading: Icon(Icons.dark_mode),
+                                title: Text("Dark Mode"),
+                                onTap: () {
+                                  Get.changeTheme(ThemeData.dark());
+                                },
+                              ),
+                              ListTile(
+                                leading: Icon(Icons.light_mode),
+                                title: Text("Light Mode"),
+                                onTap: () {
+                                  Get.changeTheme(ThemeData.light());
+                                },
+                              ),
+                            ],
+                          ));
                     },
                     child: Text("Change theme")),
               ),
+              SizedBox(
+                height: 23,
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  Get.to(ChangeLanguage());
+                },
+                child: Text("Go to Change Languages Page"),
+              )
             ],
           ),
         ),

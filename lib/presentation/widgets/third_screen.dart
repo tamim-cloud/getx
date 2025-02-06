@@ -11,38 +11,42 @@ class ThirdScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Third Screen"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Card(
-              child: ListTile(
-                title: Text("Default Dialog using getx"),
-                subtitle: Text("getx"),
-                onTap: () {
-                  Get.defaultDialog(
-                    title: "Do You Want To Delete It",
-                    middleText: "Hello World",
-                    confirm: TextButton(
-                        onPressed: () {
-                          Get.to(SecondScreen(),
-                              arguments: "Message From Third screen");
-                        },
-                        child: Text("Ok")),
-                    confirmTextColor: Colors.green,
-                    cancel: TextButton(
-                        onPressed: () {
-                          Get.back();
-                        },
-                        child: Text("Cancel")),
-                    cancelTextColor: Colors.red,
-                    buttonColor: Colors.blue,
-                    // backgroundColor: Colors.pink
-                  );
-                },
+      body: Container(
+        color: Colors.blue,
+        height: MediaQuery.of(context).size.height * .5,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Card(
+                child: ListTile(
+                  title: Text("Default Dialog using getx"),
+                  subtitle: Text("getx"),
+                  onTap: () {
+                    Get.defaultDialog(
+                      title: "Do You Want To Delete It",
+                      middleText: "Hello World",
+                      confirm: TextButton(
+                          onPressed: () {
+                            Get.to(SecondScreen(),
+                                arguments: "Message From Third screen");
+                          },
+                          child: Text("Ok")),
+                      confirmTextColor: Colors.green,
+                      cancel: TextButton(
+                          onPressed: () {
+                            Get.back();
+                          },
+                          child: Text("Cancel")),
+                      cancelTextColor: Colors.red,
+                      buttonColor: Colors.blue,
+                      // backgroundColor: Colors.pink
+                    );
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
